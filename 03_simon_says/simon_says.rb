@@ -18,6 +18,18 @@ def first_word(paragraph)
   paragraph.split(' ')[0]
 end
 
-def titleize(word)
-  word.capitalize
+def titleize(words)
+
+  finalCase = []
+  reserverWords = ['of', 'over', 'of', 'and', 'the']
+  words.split.each do |word|
+    if reserverWords.include? word
+      finalCase << word
+  	else
+  		finalCase << word.capitalize
+  	end
+  end
+
+  finalCase[0] = finalCase[0].capitalize
+	finalCase.join(' ')
 end
